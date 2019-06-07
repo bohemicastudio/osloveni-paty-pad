@@ -70,7 +70,7 @@ function osloveni(jmeno) {
 				}
 				break;
 			case 'r':
-				replacepair = ljmeno.charAt(ljmeno.length - 4) == 'a' ? ["el", "li"] : ["", "i"];
+				replacepair = ljmeno.charAt(ljmeno.length - 4) == 'a' ? ["el", "le"] : ["", "i"];
 				break;
 			case 'v':
 				replacepair = ljmeno.charAt(ljmeno.length - 5) == 'p' ? ["el", "le"] : ["el", "li"];
