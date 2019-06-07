@@ -213,6 +213,9 @@ function osloveni(jmeno) {
 			case 'm':
 				replacepair = ["s", ""];
 				break;
+			case 'p':
+                		replacepair = ["es", "se"];
+                		break;
 			case 'r':
 				replacepair = ["s", "ro"];
 				break;
