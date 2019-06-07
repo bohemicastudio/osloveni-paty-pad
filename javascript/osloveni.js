@@ -199,6 +199,10 @@ function osloveni(jmeno) {
 				}
 				break;
 			case 'l':
+		                if(ljmeno.length <= 4 ) {
+                    			replacepair = ["", "e"];
+                    			break;
+                		}
 				switch (ljmeno.charAt(ljmeno.length - 4)) {
 				case 'u':
 					replacepair = ljmeno.charAt(ljmeno.length - 5) == 'j' ? ["", "i"] : ["s", ""];
