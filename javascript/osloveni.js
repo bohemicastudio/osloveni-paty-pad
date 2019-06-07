@@ -1,4 +1,20 @@
 /**
+ * Modifikace na vrácení celého jména ve zformátovaném stavu
+ */
+function osloveniFullname(fullname) {
+	var nameWords = fullname.split(" ");
+	var res = "";
+	var index;
+	for (index = 0; index < nameWords.length; ++index) {
+		var wordFormatted = this.osloveni(nameWords[index]);
+		res = res + wordFormatted + " ";
+	}
+	// odeber poslední znak, protože je to mezera
+	if(res != "") res = res.slice(0, -1);
+	return res;
+}
+
+/**
  * Vrací pátý pád jména k prvnímu pádu
  * @param {String} jmeno první pád jména
 */
