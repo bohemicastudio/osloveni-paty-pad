@@ -1,7 +1,7 @@
 /**
  * Modifikace na vrácení celého jména ve zformátovaném stavu
  */
-function osloveniFullname(fullname) {
+module.exports.osloveniFullname = function osloveniFullname(fullname) {
 	var nameWords = fullname.split(" ");
 	var res = "";
 	var index;
@@ -18,7 +18,7 @@ function osloveniFullname(fullname) {
  * Vrací pátý pád jména k prvnímu pádu
  * @param {String} jmeno první pád jména
 */
-function osloveni(jmeno) {
+module.exports.osloveni = function osloveni(jmeno) {
 	var ljmeno;
 	var replacepair;
 	var c;

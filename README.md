@@ -20,21 +20,11 @@ Bohužel, poslední možnost je nejméně častá, jelikož dosavad neexistoval 
 
 ---
 
-V jednotlivých adresářích, nazvaných podle programovacích jazyků, najdete zdrojový kód funkce osloveni(), která pro předaný nominativ vrátí vokativ. Stačí přidat tuto funkci k vašemu programu a můžete začít používat vokativ tam, kde je to zapotřebí.
+V ~~jednotlivých adresářích, nazvaných podle programovacích jazyků,~~ repozitáři najdete zdrojový kód funkce osloveni(), která pro předaný nominativ vrátí vokativ. Stačí přidat tuto funkci k vašemu programu a můžete začít používat vokativ tam, kde je to zapotřebí.
 
-Funkce je k dispozici v dnes běžně používaných jazycích PHP, JavaScript a Python. Navíc je k dispozici také v programovacím jazyku Micropython, který má jem minimální rozdíl oproti běžnému Pythonu.
+Funkce je k dispozici v ~~dnes běžně používaných jazycích PHP,~~ JavaScript *("Rozhodli jsme se přispívat pouze di Javascriptové knihovny, jelikož ostatní v našem projektu nevyužijeme. eJednání.cz)* ~~a Python. Navíc je k dispozici také v programovacím jazyku Micropython, který má jem minimální rozdíl oproti běžnému Pythonu.~~
 
-*Upozornění:* Pro jazyk PHP funkce používá tvorbu tuples, která je k dispozici pro PHP verze 5.4 a novějších. Pokud používáte PHP starší, je zapotřebí si PHP verzi přegenerovat, viz níže.
-
----
-
-Funkce pro implementaci je vytvořena generováním. V adresáři generate-code lze nalézt soubor words.txt, který slouží jako vzorový soubor nominativů a vokativů. V souboru generate-code.py je pak algoritmus, který se tento vzor načte, vytvoří z něj strom od posledního písmene a poté z tohoto stromu generuje funkce v příslušných programovacích jazycích.
-
-Konfigurace jednotlivých programovacích jazyků se nachází v souboru configs.py. Přidání podpory pro další programovací jazyk by tak mělo být možné pouhým přidáním nové konfigurace v tomto souboru.
-
-V souboru configs.py je možné změnit formát tuples pro jazyk PHP pro podporu verze starší než 5.4.
-
-Také, pokud by se ukázalo, že pro nějaké jméno funkce nevrací správný vokativ, mělo by stačit přidat příslušné jméno v nominativu a vokativu do souboru words.txt a spustit přegenerování.
+~~*Upozornění:* Pro jazyk PHP funkce používá tvorbu tuples, která je k dispozici pro PHP verze 5.4 a novějších. Pokud používáte PHP starší, je zapotřebí si PHP verzi přegenerovat, viz níže.~~
 
 ---
 
@@ -55,7 +45,7 @@ Zajímavosti:
 
 English:
 
-This algorithm solves converting nominative into vocative in Czech language. Function is available for several programming languages, in folders with respective names. In a folder called generate-code you can find a python3 function to generate the functions in the individual programming languages.
+This algorithm solves converting nominative into vocative in Czech language. Function is available for javascript language.
 
 ---
 
@@ -76,3 +66,11 @@ as the name is changed.
   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
  0. You just DO WHAT THE FUCK YOU WANT TO.</code>
+
+ ## Update by eJednání.cz
+ - ponechána pouze Javascriptová knihovna, ostatní scripty odebrány
+ - snaha o použití knihovny i pro příjmení
+ - oprava pro jméno:
+ Karel, 
+ - oprava pro příjmení:
+ Les, Pes, 
