@@ -1,8 +1,24 @@
 /**
+ * Modifikace na vrácení celého jména ve zformátovaném stavu
+ */
+module.exports.osloveniFullname = function osloveniFullname(fullname) {
+	var nameWords = fullname.split(" ");
+	var res = "";
+	var index;
+	for (index = 0; index < nameWords.length; ++index) {
+		var wordFormatted = this.osloveni(nameWords[index]);
+		res = res + wordFormatted + " ";
+	}
+	// odeber poslední znak, protože je to mezera
+	if(res != "") res = res.slice(0, -1);
+	return res;
+}
+
+/**
  * Vrací pátý pád jména k prvnímu pádu
  * @param {String} jmeno první pád jména
 */
-function osloveni(jmeno) {
+module.exports.osloveni = function osloveni(jmeno) {
 	var ljmeno;
 	var replacepair;
 	var c;
@@ -70,7 +86,7 @@ function osloveni(jmeno) {
 				}
 				break;
 			case 'r':
-				replacepair = ljmeno.charAt(ljmeno.length - 4) == 'a' ? ["el", "li"] : ["", "i"];
+				replacepair = ljmeno.charAt(ljmeno.length - 4) == 'a' ? ["el", "le"] : ["", "i"];
 				break;
 			case 'v':
 				replacepair = ljmeno.charAt(ljmeno.length - 5) == 'p' ? ["el", "le"] : ["el", "li"];
@@ -199,6 +215,10 @@ function osloveni(jmeno) {
 				}
 				break;
 			case 'l':
+		                if(ljmeno.length <= 4 ) {
+                    			replacepair = ["", "e"];
+                    			break;
+                		}
 				switch (ljmeno.charAt(ljmeno.length - 4)) {
 				case 'u':
 					replacepair = ljmeno.charAt(ljmeno.length - 5) == 'j' ? ["", "i"] : ["s", ""];
@@ -213,6 +233,9 @@ function osloveni(jmeno) {
 			case 'm':
 				replacepair = ["s", ""];
 				break;
+			case 'p':
+                		replacepair = ["es", "se"];
+                		break;
 			case 'r':
 				replacepair = ["s", "ro"];
 				break;
